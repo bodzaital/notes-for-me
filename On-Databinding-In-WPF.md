@@ -57,10 +57,10 @@ But the UI won't update if we add, change, or remove items in the `users` list. 
 
 ```c#
 // Won't work: changes in a List<T> won't show in bound UI.
-List<User> users { get; set; }
+public List<User> users { get; set; }
 
 // Will work: ObservableCollection<T> will notify bound UI to update.
-ObservableCollection<User> users { get; set; }
+public ObservableCollection<User> users { get; set; }
 ```
 
 The `INotifyPropertyChanged` interface raises an event that contains the name of the property that's changed. There are several ways of implementing this behavior, but this is possibly the most portable way.
